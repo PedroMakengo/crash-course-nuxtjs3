@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./slices/**/*.{js,ts,vue}'],
+  content: ['./app/**/*.{js,ts,vue}', './slices/**/*.{js,ts,vue}'],
   theme: {
     extend: {
       fontFamily: {
@@ -8,4 +8,5 @@ module.exports = {
       },
     },
   },
+  plugins: [],
 }

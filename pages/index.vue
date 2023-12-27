@@ -6,11 +6,14 @@ const { data: page } = useAsyncData('index', () =>
   prismic.client.getByUID('page', 'home')
 )
 
-useHead({
-  title: prismic.asText(page.value?.data.title)
+const { asImageSrc } = usePrismic()
+
+useSeoMeta({
+  title: page.value?.data.meta_title ?? undefined,
+  description: page.value?.data.meta_description ?? undefined,
+  ogImage: asImageSrc(page.value?.data.meta_image) ?? undefined,
 })
 </script>
-
 
 <template>
   <SliceZone
